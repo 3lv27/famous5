@@ -10,10 +10,14 @@ class HomeContainer extends Component {
       button_text: 'Start',
       time: 0
     }
+    this.startStopCick = this.startStopCick.bind(this);
+    this.startit = this.startit.bind(this);
+    this.stopit = this.stopit.bind(this);
+    this.saveMoney = this.saveMoney.bind(this);
   }
 
   startStopCick() {
-    if (!this.getState.running) {
+    if (!this.state.running) {
       this.startit()
     } else {
       this.stopit()
@@ -36,8 +40,8 @@ class HomeContainer extends Component {
 
   saveMoney() {
     this.setState({
-      money: this.state.money += 1 // 1 cent
-    })
+      money: this.state.money + 1
+    })// 1 cent
   }
 
   componentWillUnmount() {
