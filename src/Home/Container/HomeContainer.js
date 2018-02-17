@@ -2,31 +2,36 @@ import React, { Component } from 'react';
 import Home from '../Components/Home'
 
 class HomeContainer extends Component {
-  state = {
-    money: 0, // cents
-    running: false,
-    button_text: 'Start',
-    time: 0
+  constructor(props) {
+    super(props)
+    this.state = {
+      money: 0, // cents
+      running: false,
+      button_text: 'Start',
+      time: 0
+    }
   }
 
   startStopCick() {
-
-  }
-
-  start() {
-    if (this.state.running) {
-      this.setState({
-        button_text: 'Stop'
-      })
-      time: setInterval(() => {
-        this.saveMoney()
-      }, 1000) // 1 sec
+    if (!this.getState.running) {
+      this.startit()
+    } else {
+      this.stopit()
     }
-    // this.state.running = !this.state.running
+    this.setState({ running: !this.state.running })
   }
 
-  stop() {
-    this.setState({ time: })
+  startit() {
+    this.setState({ button_text: 'Stop' })
+    let interval = setInterval(() => {
+      this.saveMoney()
+    }, 1000) // 1 sec
+    return interval
+  }
+
+  stopit() {
+    this.setState({ time: this.startit() })
+
   }
 
   saveMoney() {
@@ -43,7 +48,7 @@ class HomeContainer extends Component {
     return (
       <div>
         <Home />
-        <button onClick={this.startStopCick()}>
+        <button onClick={this.startStopCick}>
           {this.state.button_text}
         </button>
         <div>Time: {this.time}</div>
