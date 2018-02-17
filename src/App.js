@@ -10,11 +10,11 @@ import './App.css';
 const App = () => (
   <div className="App">
     <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={HomeContainer} />
-          <Route path="/data" component={DataContainer}/>
-          <Route component={NotFound} />
-        </Switch>
+      <Switch>
+        <Route exact path="/" component={HomeContainer} />
+        <Route path="/data" component={DataContainer} />
+        {/*   <Route component={NotFound} /> */}
+      </Switch>
     </BrowserRouter>
   </div>
 );
