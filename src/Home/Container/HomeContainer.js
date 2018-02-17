@@ -10,15 +10,23 @@ class HomeContainer extends Component {
   }
 
   startStopCick() {
-    if (!this.state.running) {
+
+  }
+
+  start() {
+    if (this.state.running) {
       this.setState({
-        button_text: 'Stop',
-        time: setInterval(() => {
-          this.saveMoney()
-        }, 1000) // 1 sec
+        button_text: 'Stop'
       })
-      // this.state.running = !this.state.running
+      time: setInterval(() => {
+        this.saveMoney()
+      }, 1000) // 1 sec
     }
+    // this.state.running = !this.state.running
+  }
+
+  stop() {
+    this.setState({ time: })
   }
 
   saveMoney() {
