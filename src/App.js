@@ -3,6 +3,7 @@ import { Route, BrowserRouter, Switch } from 'react-router-dom'
 
 import HomeContainer from './Home/Container/HomeContainer'
 import DataContainer from './Data/Container/DataContainer'
+import NotFound from './NotFound'
 
 import './App.css';
 
